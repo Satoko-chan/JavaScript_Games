@@ -5,6 +5,11 @@
     constructor() {
       const section = document.createElement('section');
       section.classList.add('panel');
+// ====score====
+      // this.score = document.getElementById('score');
+      // this.yourScore = document.createElement('p');
+      // this.score.appendChild(yourScore);
+      // this.scoreNum = 0;
 
       this.img = document.createElement('img');
       this.img.src = this.getRandomImage();
@@ -16,7 +21,7 @@
       this.stop = document.createElement('div');
       this.stop.textContent = 'STOP';
       this.stop.classList.add('stop', 'inactive');
-      this.stop.addEventListener('click', ()=> {
+      this.stop.addEventListener('click', () => {
         if (this.stop.classList.contains('inactive')) {
           return;
         }
@@ -65,7 +70,7 @@
     }
 
     isMatched(p1, p2) {
-      return this.img.src === p1.img.src && this.img.src === p2.img.src; 
+      return this.img.src === p1.img.src && this.img.src === p2.img.src;
     }
 
     unmatch() {
@@ -74,6 +79,10 @@
 
     match() {
       this.result.classList.remove('hidden');
+// ====score====
+      // this.score.classList.remove('hidden');
+      // this.scoreNum++
+      // this.yourScore.textContent = `YOUR SCORE: ${scoreNum}`;
     }
 
     activate() {
@@ -112,7 +121,7 @@
   let panelsLeft = 3;
 
   const spin = document.getElementById('spin');
-  spin.addEventListener('click', ()=> {
+  spin.addEventListener('click', () => {
     if (spin.classList.contains('inactive')) {
       return;
     }

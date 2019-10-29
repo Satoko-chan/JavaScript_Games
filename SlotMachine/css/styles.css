@@ -97,4 +97,10 @@ main {
   text-decoration: none;
 }
 
+#score.hidden {
+  transform: translateY(-500px);
+}
+
+
+
 
