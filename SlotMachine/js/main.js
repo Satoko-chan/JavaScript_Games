@@ -8,6 +8,8 @@
 
       this.img = document.createElement('img');
       this.img.src = this.getRandomImage();
+      this.result = document.getElementById('result');
+      this.reply = document.querySelector('#result > a');
 
       this.timeoutId = undefined;
 
@@ -70,6 +72,10 @@
       this.img.classList.add('unmatched');
     }
 
+    match() {
+      this.result.classList.remove('hidden');
+    }
+
     activate() {
       this.img.classList.remove('unmatched');
       this.stop.classList.remove('inactive');
@@ -86,9 +92,16 @@
     if (panels[2].isUnmatched(panels[0], panels[1])) {
       panels[2].unmatch();
     }
+    if (panels[0].isMatched(panels[1], panels[2])) {
+      panels[0].match();
+    }
+    if (panels[1].isMatched(panels[0], panels[2])) {
+      panels[1].match();
+    }
+    if (panels[2].isMatched(panels[0], panels[1])) {
+      panels[2].match();
+    }
   }
-
-
 
   const panels = [
     new Panel(),
